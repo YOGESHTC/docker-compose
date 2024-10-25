@@ -1,0 +1,28 @@
+version: '3.0'
+services:
+  jewel-sevice:
+    build:
+      context: ./jewellery_html_template
+    ports:
+      - 81:80
+    volumes:
+      - jewel-vol:/usr/local/apache2/htdocs
+  fin-service:
+    build:
+      context: ./Finance
+    ports:
+      - 82:80
+    volumes:
+      - fin-vol:/usr/local/apache2/htdocs
+  baris-service:
+    build:
+      context: ./Barista-Cafe
+    ports:
+      - 83:80
+    volumes:
+      - baris-vol:/usr/local/apache2/htdocs
+volumes:
+  jewel-vol:
+  fin-vol:
+  baris-vol:
+
